@@ -1,9 +1,19 @@
+import { Route, Routes } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Jobs from "./pages/Jobs";
+import { Toaster } from "react-hot-toast";
+
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline bg-green-200">
-        Hello world!
-      </h1>
+      <div className="min-h-screen bg-gradient-to-br from-gray-200 to-slate-400 p-2">
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/search-jobs" element={<Jobs />} />
+        </Routes>
+
+        <Toaster />
+      </div>
     </>
   )
 }
