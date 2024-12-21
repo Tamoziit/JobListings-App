@@ -9,6 +9,7 @@ class Job(models.Model):
     salary = models.CharField(max_length=255, null=True, blank=True)
     company_name = models.CharField(max_length=255, default="Unknown Company")
     summary = models.TextField(null=True, blank=True)
+    location = models.CharField(max_length=255, null=True, blank=True)
     is_remote = models.BooleanField(default=False)
     workplace_types = models.JSONField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

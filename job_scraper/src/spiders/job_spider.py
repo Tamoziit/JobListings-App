@@ -83,10 +83,6 @@ class JobSpider(scrapy.Spider):
             )
 
     def extract_job_data(self, job):
-        """
-        Extract and validate job data from the API response.
-        Return None if data is invalid.
-        """
         try:
             job_data = {
                 'id': job.get('id', '').strip(),
@@ -96,6 +92,7 @@ class JobSpider(scrapy.Spider):
                 'salary': job.get('salary', '').strip(),
                 'company_name': job.get('companyName', '').strip(),
                 'summary': job.get('summary', '').strip(),
+                'location': job.get('jobLocation', {}).get('displayName', '').strip(),
                 'is_remote': job.get('isRemote', False),
                 'workplace_types': job.get('workplaceTypes', []),
             }
