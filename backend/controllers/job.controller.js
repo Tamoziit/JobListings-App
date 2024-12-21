@@ -20,4 +20,20 @@ const postJobs = async (req, res) => {
     }
 };
 
-module.exports = { getJobs, postJobs };
+const getJobById = async (req, res) => {
+    try {
+        const jobId = req.params.id;
+        const job = await Job.findByPk(jobId);
+        
+        if (!job) {
+            return res.status(400).json({ error: "Job not found" });
+        }
+
+        res.status(200).json(job);
+    } catch (error) {
+        console.error("Error in getting Job by ID", error);
+        return res.status(500).json({ error: "Internal server Error" });
+    }
+};
+
+module.exports = { getJobs, postJobs, getJobById };

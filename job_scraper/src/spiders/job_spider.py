@@ -1,6 +1,7 @@
 import scrapy
 import requests
 from urllib.parse import urlencode
+from decouple import config
 
 class JobSpider(scrapy.Spider):
     name = 'job_spider'
@@ -55,7 +56,7 @@ class JobSpider(scrapy.Spider):
             # POST the validated data to the Django backend
             try:
                 django_response = requests.post(
-                    'http://127.0.0.1:8000/api/v1/jobs/add-job',
+                    config('BACKEND_POST_URL'),
                     json=job_data,
                     headers={'Content-Type': 'application/json'}
                 )
