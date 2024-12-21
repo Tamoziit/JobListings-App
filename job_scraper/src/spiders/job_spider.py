@@ -18,14 +18,12 @@ class JobSpider(scrapy.Spider):
         'radiusUnit': 'mi',
         'page': '1',
         'pageSize': '20',
-        'facets':
-        'employmentType|postedDate|workFromHomeAvailability|workplaceTypes|employerType|easyApply|isRemote|willingToSponsor',
+        'facets': 'employmentType|postedDate|workFromHomeAvailability|workplaceTypes|employerType|easyApply|isRemote|willingToSponsor',
         'filters.workplaceTypes': 'Remote',
         'filters.employmentType': 'CONTRACTS',
         'filters.postedDate': 'ONE',
         'currencyCode': 'USD',
-        'fields':
-        'id|jobId|guid|summary|title|postedDate|modifiedDate|jobLocation.displayName|detailsPageUrl|salary|clientBrandId|companyPageUrl|companyLogoUrl|companyLogoUrlOptimized|positionId|companyName|employmentType|isHighlighted|score|easyApply|employerType|workFromHomeAvailability|workplaceTypes|isRemote|debug|jobMetadata|willingToSponsor',
+        'fields': 'id|jobId|guid|summary|title|postedDate|modifiedDate|jobLocation.displayName|detailsPageUrl|salary|clientBrandId|companyPageUrl|companyLogoUrl|companyLogoUrlOptimized|positionId|companyName|employmentType|isHighlighted|score|easyApply|employerType|workFromHomeAvailability|workplaceTypes|isRemote|debug|jobMetadata|willingToSponsor',
         'culture': 'en',
         'recommendations': 'true',
         'interactionId': '0',
