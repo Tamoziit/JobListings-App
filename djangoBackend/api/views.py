@@ -28,6 +28,18 @@ def add_job(request):
         return Response({"message": "Job added successfully"}, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['GET'])
+def get_job_by_id(request, job_id):
+    try:
+        job = Job.objects.get(id=job_id)
+        serializer = JobSerializer(job)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except Job.DoesNotExist:
+        return Response({"error": "Job not found"}, status=status.HTTP_400_BAD_REQUEST)
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 # Admin endpoint
 @api_view(['POST'])
 def reset_database(request):
