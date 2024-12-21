@@ -8,16 +8,16 @@ CareerFleet is a robust job portal application developed as part of an internshi
 Below are some glimpses of the application:  
 
 ### Landing Page  
-<img align="center" alt="Geeksomaniac" width="420" src="/screenshots/ss1.png"> 
+<img align="center" alt="ss1" src="/screenshots/ss1.png"> 
 
 ### Job List Page  
-<img align="center" alt="Geeksomaniac" width="420" src="/screenshots/ss2.png">
+<img align="center" alt="ss2" src="/screenshots/ss2.png">
 
 ### Job Searching & Filtering  
-<img align="center" alt="Geeksomaniac" width="420" src="/screenshots/ss3.png"> 
+<img align="center" alt="ss3" src="/screenshots/ss3.png"> 
 
 ### Application & Job Details Page  
-<img align="center" alt="Geeksomaniac" width="420" src="/screenshots/ss4.png"> 
+<img align="center" alt="ss4" src="/screenshots/ss4.png"> 
 
 
 ### Key Features  
@@ -49,9 +49,14 @@ Below are some glimpses of the application:
    python manage.py migrate
    python manage.py runserver
    ```  
-4. Scrape job website to populate the local DB
+4. Scrape job website to populate the local DB:
     ```bash  
    cd job_scraper
    scrapy crawl job_spider
    ```
-5. Navigate to http://localhost:5173/
+4. Start the React Application:
+    ```bash  
+   cd frontend
+   npm run dev
+   ```
+6. Navigate to http://localhost:5173/
