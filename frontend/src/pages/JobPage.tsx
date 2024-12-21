@@ -14,6 +14,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import Spinner from "../components/Spinner";
 import formatSalary from "../utils/formatSalary";
+import Footer from "../components/Footer";
 
 const JobPage = () => {
   const [jobData, setJobData] = useState<JobProps | null>(null);
@@ -48,91 +49,95 @@ const JobPage = () => {
   }, [id]);
 
   return (
-    <div className="mx-auto p-4 w-full lg:w-[90%] h-full">
-      {loading ? (
-        <Spinner />
-      ) : (
-        jobData && (
-          <div className="bg-white shadow-md rounded-lg p-6 space-y-6">
-            <div className="flex items-center space-x-4">
-              <img
-                src={jobData.company_logo_url}
-                alt="Company Logo"
-                className="w-[150px] rounded-full object-contain"
-              />
-              <div>
-                <h1 className="text-3xl font-semibold">{jobData.title}</h1>
-                <div className="flex items-center gap-2">
-                  <h2 className="text-lg text-gray-500 font-medium">{jobData.company_name}</h2>
-                  <a
-                    href={jobData.company_page_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base text-blue-600 hover:underline"
-                  >
-                    <FaExternalLinkAlt />
-                  </a>
-                </div>
+    <>
+      <div className="mx-auto p-4 w-full lg:w-[90%] h-full lg:mb-10 mb-[50px]">
+        {loading ? (
+          <Spinner />
+        ) : (
+          jobData && (
+            <div className="bg-white shadow-md rounded-lg p-6 space-y-6">
+              <div className="flex items-center space-x-4">
+                <img
+                  src={jobData.company_logo_url}
+                  alt="Company Logo"
+                  className="w-[150px] rounded-full object-contain"
+                />
+                <div>
+                  <h1 className="text-3xl font-semibold">{jobData.title}</h1>
+                  <div className="flex items-center gap-2">
+                    <h2 className="text-lg text-gray-500 font-medium">{jobData.company_name}</h2>
+                    <a
+                      href={jobData.company_page_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base text-blue-600 hover:underline"
+                    >
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
 
-                <div className="flex items-center gap-1 text-sm text-gray-600">
-                  <IoMdTime />
-                  <span className="-mt-1">{timeAgo(jobData.posted_date)}</span>
+                  <div className="flex items-center gap-1 text-sm text-gray-600">
+                    <IoMdTime />
+                    <span className="-mt-1">{timeAgo(jobData.posted_date)}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <hr className="border-gray-300" />
+              <hr className="border-gray-300" />
 
-            <div className="text-gray-600 space-y-4">
-              <h2 className="text-2xl font-semibold text-black">Details</h2>
-              <p className="flex items-center space-x-2 gap-1 text-gray-600">
-                <strong>
-                  <IoLocationOutline />
-                </strong>
-                <span><strong>Location:</strong></span> {jobData.location || 'TBD'}
-              </p>
-              <p className="flex items-center space-x-2 gap-1 text-gray-600">
-                <strong>
-                  <FaRegCalendarAlt />
-                </strong>
-                <span><strong>Posted On:</strong></span> {new Date(jobData.posted_date).toLocaleDateString()}
-              </p>
-              <p className="flex items-center space-x-2 gap-1 text-gray-600">
-                <strong>
-                  <RiHome2Line />
-                </strong>
-                <span><strong>Remote:</strong></span> {jobData.is_remote ? 'Yes' : 'No'}
-              </p>
-              <p className="flex items-center space-x-2 gap-1 text-gray-600">
-                <strong>
-                  <GoStack />
-                </strong>
-                <span><strong>Workplace Types:</strong></span> {jobData.workplace_types.join(', ')}
-              </p>
-            </div>
-            <hr className="border-gray-300" />
+              <div className="text-gray-600 space-y-4">
+                <h2 className="text-2xl font-semibold text-black">Details</h2>
+                <p className="flex items-center space-x-2 gap-1 text-gray-600">
+                  <strong>
+                    <IoLocationOutline />
+                  </strong>
+                  <span><strong>Location:</strong></span> {jobData.location || 'TBD'}
+                </p>
+                <p className="flex items-center space-x-2 gap-1 text-gray-600">
+                  <strong>
+                    <FaRegCalendarAlt />
+                  </strong>
+                  <span><strong>Posted On:</strong></span> {new Date(jobData.posted_date).toLocaleDateString()}
+                </p>
+                <p className="flex items-center space-x-2 gap-1 text-gray-600">
+                  <strong>
+                    <RiHome2Line />
+                  </strong>
+                  <span><strong>Remote:</strong></span> {jobData.is_remote ? 'Yes' : 'No'}
+                </p>
+                <p className="flex items-center space-x-2 gap-1 text-gray-600">
+                  <strong>
+                    <GoStack />
+                  </strong>
+                  <span><strong>Workplace Types:</strong></span> {jobData.workplace_types.join(', ')}
+                </p>
+              </div>
+              <hr className="border-gray-300" />
 
-            <div className="text-gray-800">
-              <h2 className="text-2xl font-semibold">Summary</h2>
-              <p>{jobData.summary}</p>
-            </div>
-            <hr className="border-gray-300" />
+              <div className="text-gray-800">
+                <h2 className="text-2xl font-semibold">Summary</h2>
+                <p>{jobData.summary}</p>
+              </div>
+              <hr className="border-gray-300" />
 
-            <div className="flex items-center gap-2 text-xl">
-						<FaRegMoneyBillAlt className="mt-1 text-gray-700" />
-						<h2 className="text-gray-700 font-semibold">Salary:</h2>
-						<h2 className="text-gray-700 font-bold">{formatSalary(jobData.salary) || 'TBD on Joining'}</h2>
-						<h2 className="text-base -ml-1 text-gray-600">/hour</h2>
-            </div>
+              <div className="flex items-center gap-2 text-xl">
+                <FaRegMoneyBillAlt className="mt-1 text-gray-700" />
+                <h2 className="text-gray-700 font-semibold">Salary:</h2>
+                <h2 className="text-gray-700 font-bold">{formatSalary(jobData.salary) || 'TBD on Joining'}</h2>
+                <h2 className="text-base -ml-1 text-gray-600">/hour</h2>
+              </div>
 
-            <div className="w-full flex items-center justify-center bg-blue-600 p-2 rounded-full text-xl font-semibold text-white hover:bg-blue-700 cursor-pointer">
-              <button className="flex items-center gap-2 w-full justify-center">
-                Apply Now <RiShoppingBagLine />
-              </button>
+              <div className="w-full flex items-center justify-center bg-blue-600 p-2 rounded-full text-xl font-semibold text-white hover:bg-blue-700 cursor-pointer">
+                <button className="flex items-center gap-2 w-full justify-center">
+                  Apply Now <RiShoppingBagLine />
+                </button>
+              </div>
             </div>
-          </div>
-        )
-      )}
-    </div>
+          )
+        )}
+      </div>
+
+      <Footer />
+    </>
   );
 };
 

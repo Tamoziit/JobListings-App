@@ -5,6 +5,7 @@ import JobCard from "../components/JobCard";
 import { JobProps } from "../types/types";
 import Spinner from "../components/Spinner";
 import { IoMdTime } from "react-icons/io";
+import Footer from "../components/Footer";
 
 const Jobs = () => {
   const { loading, getJobs } = useGetJobs();
@@ -70,7 +71,7 @@ const Jobs = () => {
   };
 
   return (
-    <div className="flex flex-col w-full items-center">
+    <div className="flex flex-col w-full items-center min-h-screen">
       <Topbar
         search={search}
         setSearch={setSearch}
@@ -80,7 +81,7 @@ const Jobs = () => {
         resetFilters={resetFilters}
       />
 
-      <div className="flex w-full items-end px-4">
+      <div className="flex lg:w-[90%] w-full items-end px-4">
         <button className="flex ml-auto items-center gap-1 bg-white text-base py-1 px-2 rounded-full border-2 border-blue-400 text-blue-700 hover:border-purple-700 hover:text-purple-800" onClick={getRecentJobs}>
           <IoMdTime />
           <span>Most Recent</span>
@@ -90,12 +91,14 @@ const Jobs = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="w-full flex flex-col gap-3 items-center justify-center md:px-3 pt-7 mb-[70px]">
+        <div className="w-full flex flex-col gap-3 items-center justify-center md:px-3 pt-7 mb-[55px]">
           {renderJobs().map((job, _idx) => (
             <JobCard key={_idx} job={job} />
           ))}
         </div>
       )}
+
+      <Footer />
     </div >
   )
 }
