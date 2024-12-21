@@ -1,12 +1,17 @@
 import { FaHome, FaSearch } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { MdDelete } from "react-icons/md";
 
 interface TopbarProps {
   search: string;
   setSearch: (value: string) => void;
+  handleSearch: () => void;
+  getRemoteJobs: () => void;
+  getOnSiteJobs: () => void;
+  resetFilters: () => void;
 }
 
-const Topbar = ({ search, setSearch }: TopbarProps) => {
+const Topbar = ({ search, setSearch, handleSearch, getRemoteJobs, getOnSiteJobs, resetFilters }: TopbarProps) => {
   return (
     <div className="w-full lg:w-[90%] bg-white m-3 rounded-xl shadow-lg p-2">
       <div className="w-full flex flex-col justify-center gap-2 px-4 py-5 bg-gray-100 rounded-lg">
@@ -16,23 +21,31 @@ const Topbar = ({ search, setSearch }: TopbarProps) => {
             type="text"
             placeholder="Search by Job Title or Company Name"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value)
+              handleSearch()
+            }}
           />
           <button
             className="rounded-full p-2 w-fit bg-blue-600 hover:bg-blue-700 mr-1"
+            onClick={handleSearch}
           >
             <FaSearch className="text-white" />
           </button>
         </div>
 
         <div className="flex gap-6 items-start ml-6 mt-2">
-          <button className="flex items-center gap-1 bg-white text-base py-1 px-2 rounded-full border-2 border-gray-400 text-gray-700 hover:border-blue-500 hover:text-blue-500">
+          <button className="flex items-center gap-1 bg-white text-base py-1 px-2 rounded-full border-2 border-gray-400 text-gray-700 hover:border-blue-500 hover:text-blue-500" onClick={getRemoteJobs}>
             <FaHome />
             <span>Remote</span>
           </button>
-          <button className="flex items-center gap-1 bg-white text-base py-1 px-2 rounded-full border-2 border-gray-400 text-gray-700 hover:border-blue-500 hover:text-blue-500">
+          <button className="flex items-center gap-1 bg-white text-base py-1 px-2 rounded-full border-2 border-gray-400 text-gray-700 hover:border-blue-500 hover:text-blue-500" onClick={getOnSiteJobs}>
             <FaLocationDot />
             <span>On-Site</span>
+          </button>
+          <button className="flex items-center gap-1 bg-white text-base py-1 px-2 rounded-full border-2 border-gray-400 text-gray-700 hover:border-blue-500 hover:text-blue-500" onClick={resetFilters}>
+            <MdDelete />
+            <span>Reset Filters</span>
           </button>
         </div>
       </div>
