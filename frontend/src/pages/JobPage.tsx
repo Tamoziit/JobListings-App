@@ -15,6 +15,7 @@ import toast from "react-hot-toast";
 import Spinner from "../components/Spinner";
 import formatSalary from "../utils/formatSalary";
 import Footer from "../components/Footer";
+import LogoHolder from "../components/LogoHolder";
 
 const JobPage = () => {
   const [jobData, setJobData] = useState<JobProps | null>(null);
@@ -50,7 +51,9 @@ const JobPage = () => {
 
   return (
     <>
-      <div className="mx-auto p-4 w-full lg:w-[90%] h-full lg:mb-10 mb-[50px]">
+      <LogoHolder />
+
+      <div className="mx-auto p-4 w-full lg:w-[90%] h-full mt-2 lg:mb-10 mb-[50px]">
         {loading ? (
           <Spinner />
         ) : (

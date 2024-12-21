@@ -6,6 +6,7 @@ import { JobProps } from "../types/types";
 import Spinner from "../components/Spinner";
 import { IoMdTime } from "react-icons/io";
 import Footer from "../components/Footer";
+import LogoHolder from "../components/LogoHolder";
 
 const Jobs = () => {
   const { loading, getJobs } = useGetJobs();
@@ -72,6 +73,10 @@ const Jobs = () => {
 
   return (
     <div className="flex flex-col w-full items-center min-h-screen">
+      <div className="w-full mb-4">
+      <LogoHolder />
+      </div>
+
       <Topbar
         search={search}
         setSearch={setSearch}

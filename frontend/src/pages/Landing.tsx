@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import LogoHolder from "../components/LogoHolder";
 
 const Landing = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <LogoHolder />
       <div className="flex flex-1 items-center justify-between">
         <div className="w-1/2 h-full flex items-center justify-center">
           <img
@@ -15,7 +17,7 @@ const Landing = () => {
 
         <div className="w-1/2 flex flex-col items-center justify-center px-8">
           <h1 className="text-5xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-violet-600 drop-shadow-lg">
-            Welcome to JobFinder
+            Welcome to CareerFleet
           </h1>
           <p className="text-xl text-gray-600 italic mb-6 text-center">
             "Your future starts here. Discover opportunities that match your passion."
