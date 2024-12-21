@@ -4,15 +4,21 @@ import { IoMdTime } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 import { JobProps } from "../types/types";
 import formatSalary from "../utils/formatSalary";
+import { useNavigate } from "react-router-dom";
 
 interface JobCardProps {
   job: JobProps;
 }
 
 const JobCard = ({ job }: JobCardProps) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="w-full lg:w-[90%] bg-white rounded-xl shadow-lg p-2 hover:scale-105">
-      <div className="w-full flex flex-col md:flex-row justify-between gap-2 px-4 py-5 bg-gray-100 rounded-lg cursor-pointer">
+    <div
+      className="w-full lg:w-[90%] bg-white rounded-xl shadow-lg p-2 hover:scale-105  cursor-pointer"
+      onClick={() => navigate(`/search-jobs/${job.id}`)}
+    >
+      <div className="w-full flex flex-col md:flex-row justify-between gap-2 px-4 py-5 bg-gray-100 rounded-lg">
         {/* Left Section */}
         <div className="flex items-center gap-3">
           <img
