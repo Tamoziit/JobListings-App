@@ -43,21 +43,14 @@ def get_job_by_id(request, job_id):
 # Admin endpoint
 @api_view(['POST'])
 def reset_database(request):
-    """
-    Drop the existing database and create a new one.
-    Requires superuser privileges.
-    """
     try:
-        # Get the database name
         database_name = connections.databases['default']['NAME']
 
-        # SQL commands to drop and recreate the database
         sql_commands = [
             f"DROP DATABASE IF EXISTS {database_name};",
             f"CREATE DATABASE {database_name} CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;",
         ]
 
-        # Execute commands using the default database connection
         with connections['default'].cursor() as cursor:
             for command in sql_commands:
                 cursor.execute(command)

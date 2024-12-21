@@ -1,4 +1,4 @@
-from django.core.management.base import BaseCommand  # Import BaseCommand
+from django.core.management.base import BaseCommand  
 from django.db import connections
 from django.db.utils import OperationalError
 import logging
@@ -10,7 +10,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         try:
-            # Attempt to connect to the database
             connections['default'].cursor()
             self.stdout.write(self.style.SUCCESS('Database connection successful'))
             logger.info('Database connection successful')
