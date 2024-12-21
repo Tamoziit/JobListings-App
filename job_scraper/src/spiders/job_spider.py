@@ -89,6 +89,7 @@ class JobSpider(scrapy.Spider):
                 'title': job.get('title', '').strip(),
                 'posted_date': job.get('postedDate', '').strip(),
                 'company_logo_url': job.get('companyLogoUrl', '').strip(),
+                'company_page_url': job.get('companyPageUrl', '').strip(),
                 'salary': job.get('salary', '').strip(),
                 'company_name': job.get('companyName', '').strip(),
                 'summary': job.get('summary', '').strip(),

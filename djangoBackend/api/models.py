@@ -6,6 +6,7 @@ class Job(models.Model):
     title = models.CharField(max_length=255)
     posted_date = models.DateTimeField(default=now)
     company_logo_url = models.URLField(null=True, blank=True)
+    company_page_url = models.URLField(null=True, blank=True)
     salary = models.CharField(max_length=255, null=True, blank=True)
     company_name = models.CharField(max_length=255, default="Unknown Company")
     summary = models.TextField(null=True, blank=True)

@@ -4,3 +4,4 @@ python-decouple==3.8
 djangorestframework==3.14.0
 Scrapy==2.11.0
 requests==2.31.0
+django-cors-headers==3.14.0
