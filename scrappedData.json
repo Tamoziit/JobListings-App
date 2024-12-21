@@ -1,0 +1,59 @@
+{
+    "data": [
+      {
+        "id": "be475785ee3a2e15bd65eba1b4bc0af8",
+        "title": "Software Engineer V",
+        "postedDate": "2024-12-20T22:55:18Z",
+        "detailsPageUrl": "https://www.dice.com/job-detail/5038a942-f101-4aa8-bb82-f83e0ccc419d",
+        "companyPageUrl": "https://www.dice.com/company/10125450",
+        "companyLogoUrl": "https://d3qscgr6xsioh.cloudfront.net/XcyT95zaQCSEfjBO5nNI_4bb67e01109ca8bb36375fbb2cc22768.jpg?format=webp",
+        "salary": "Depends on Experience",
+        "companyName": "AVA Consulting",
+        "employmentType": "Contract",
+        "summary": "AVA Consulting is seeking a Software Engineer V. Location: Remote - US. U.S. Citizens and those authorized to work in the U.S. are encouraged to apply. We are unable to sponsor at this time.",
+        "jobId": "be475785ee3a2e15bd65eba1b4bc0af8",
+        "score": 9757.675,
+        "easyApply": true,
+        "willingToSponsor": false,
+        "isRemote": true,
+        "workplaceTypes": ["Remote"]
+      },
+      {
+        "id": "941936cd626e79d8b91b16c5f9228e09",
+        "title": "UI/UX Developer / Software Developer",
+        "postedDate": "2024-12-20T16:08:00Z",
+        "detailsPageUrl": "https://www.dice.com/job-detail/adaab4f9-ccad-4c0b-a2d2-a6e2dffb4934",
+        "companyPageUrl": "https://www.dice.com/company/91162806",
+        "companyLogoUrl": "https://d3qscgr6xsioh.cloudfront.net/TAmHFo7nQ7qMZz8AaOcQ_transformed.png?format=webp",
+        "salary": "$50 - $60",
+        "companyName": "HPTech Inc.",
+        "employmentType": "Contract",
+        "summary": "Role: UI/UX Developer/ Software Developer. Location: US Remote. Type: Long Term Contract w2 Only.",
+        "jobId": "941936cd626e79d8b91b16c5f9228e09",
+        "score": 9725.315,
+        "easyApply": true,
+        "willingToSponsor": false,
+        "isRemote": true,
+        "workplaceTypes": ["Remote"]
+      },
+      {
+        "id": "0d638894e617bd7f4a9690d3e6e94b6b",
+        "title": "Software Engineering Advisor",
+        "postedDate": "2024-12-20T19:10:34Z",
+        "detailsPageUrl": "https://www.dice.com/job-detail/50ad512e-92bb-4ecf-8fe2-fdcb80abacfc",
+        "companyPageUrl": "https://www.dice.com/company/cxsapwma1",
+        "companyLogoUrl": "https://d3qscgr6xsioh.cloudfront.net/nwd2B9CDT8Oo4K91VMeJ_transformed.png?format=webp",
+        "salary": "$52 - $62",
+        "companyName": "Randstad Digital",
+        "employmentType": "Contract",
+        "summary": "... immediate opening for a highly motivated Software Engineering Advisor.",
+        "jobId": "0d638894e617bd7f4a9690d3e6e94b6b",
+        "score": 9623.19,
+        "easyApply": false,
+        "willingToSponsor": false,
+        "isRemote": true,
+        "workplaceTypes": ["Remote", "On-Site"]
+      }
+    ]
+  }
+  
