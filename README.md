@@ -65,7 +65,8 @@ Below are some glimpses of the application:
 ### Footnotes
 While completing this assignment the major challenges I had to face were:
 - Writing the Backend in DRF.
-- Utilising a web scrapper to handle pagination
+- Utilising a web scrapper to handle pagination.
+
 This is how I got over thses challenges:
 - I am well versed with Node + Express framework for writing robust backend applications. After figuring out the workflow of the project (by writing it in node, thats why, the project repo has 2 backend servers, one written in Node.js, the other in Django REST), all I had to adapt to was DRF syntax & environment.
 - I handled the pagination by recursively scraping the GET requests on the initial first page of the given website, which eventually led to other pages.
